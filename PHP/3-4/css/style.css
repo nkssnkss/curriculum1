@@ -17,10 +17,11 @@ p{
 hr{
     border-top: 5px solod white;
 }
-input{
-    text-align: center;
-    padding: 20px 0;
-}
 body{
     background-color: gray;
+}
+div{
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
