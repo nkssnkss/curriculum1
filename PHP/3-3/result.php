@@ -1,6 +1,6 @@
 <?php
 $my_number = $_GET['my_number'];
-$select_number = mt_rand(0,strlen($my_number));
+$select_number = mt_rand(-1,strlen($my_number));
 $furtune_number = substr($my_number, $select_number, 1);
 
 ?>

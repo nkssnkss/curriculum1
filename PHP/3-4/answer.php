@@ -8,7 +8,7 @@ $q1 = $_POST['q1'];
 $q2 = $_POST['q2'];
 ?>
 
-<php?
+<?php
 function Judgement ($Q, $A) {
     if ($Q == $A){
             echo "正解";
@@ -23,7 +23,7 @@ function Judgement ($Q, $A) {
 <!--作成した関数を呼び出して結果を表示-->
 <p>①の答え
 <br>
-<php?
+<?php
     Judgement($q0,80)
 ?>
 </p>
@@ -31,18 +31,12 @@ function Judgement ($Q, $A) {
 
 <p>②の答え
     <br>
-    <?php if ($q1 == "HTML"){
-            echo "正解";
-        } else {
-            echo "残念";
-        } ?> </p>
+    <?php
+    Judgement($q1,"HTML")
+?></p>
 
 <p>③の答え
     <br>
-    <?php if ($q2 == "select"){
-            echo "正解";
-        } else {
-            echo "残念";
-        } ?> </p>
-
-</p>
+    <?php
+    Judgement($q2,"select")
+?> </p>
