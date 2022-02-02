@@ -8,7 +8,5 @@ $db['user'] = "root";
 // ユーザー名のパスワード
 $db['pass'] = "";
 // データベース名
-$db['dbname'] = "yiGroupBlog";
-// テーブル名
-$db['table'] = "users";
+$db['dbname'] = "YIGroupBlog";
 ?>
