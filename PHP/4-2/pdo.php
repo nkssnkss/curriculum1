@@ -12,7 +12,7 @@ define('PDO_DSN', 'mysql:host=localhost;charset=utf8;dbname='.DB_DATABASE);
  * DBの接続設定をしたPDOインスタンスを返却する
  * @return object
  */
-function db_connect() {
+function connect() {
     try {
         // PDOインスタンスの作成
         $pdo = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);

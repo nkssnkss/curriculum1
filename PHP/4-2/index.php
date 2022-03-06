@@ -1,18 +1,14 @@
 <?php
 require_once("getData.php");
 
-$Post = new getData();
-$Post->getPostData();
-$post = $Post->getPostData();
-
-$User = new getData();
-$User->getUserData();
-$user = $User->getUserData();
+$Blog = new getData();
+$post = $Blog->getPostData();
+$user = $Blog->getUserData();
 ?>
 
 
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ブログ</title>
@@ -25,25 +21,39 @@ $user = $User->getUserData();
          </div>
          <div class="box2">
             <div class="box3">
-                <span>ようこそ<?php $user[first_name]&[last_name] さん?></span>
+                <span class="upper"><?php echo "ようこそ".  $user['last_name'] .$user['first_name'] ."さん"?></span>
             </div>
             <div class="box4">
-            <span>最終ログイン日<?php $user[last_login] ?>:</span>
+                <span class="upper"><?php echo "最終ログイン日" .$user['last_login'] ?></span>
             </div>
         </div>
     </div>
-        <div class="header"></div>
-        <table width="80%" border="1">
+    <table align="center">
+        <tr>
+            <th>記事ID</th>
+            <th>タイトル</th>
+            <th>カテゴリ</th>
+            <th>本文</th>
+            <th>投稿日</th>
+        </tr>
+        <?php while ($data = $post->fetch(PDO::FETCH_ASSOC)) :?>
             <tr>
-                <th scope="col">記事ID</th>
-                <th scope="col">タイトル</th>
-                <th scope="col">カテゴリ</th>
-                <th scope="col">本文</th>
-                <th scope="col">投稿日</th>
+                <td> <?php echo $data['id'] ; ?> </td>
+                <td> <?php echo $data['title'] ; ?> </td>
+                <td> <?php if ($data['category_no'] == 1) {
+                                echo "食事";
+                            } elseif ($data['category_no'] == 2) {
+                                echo "旅行" ;
+                            } else {
+                                echo "その他" ;
+                            } ?> </td>
+                <td> <?php echo $data['comment'] ; ?> </td>
+                <td> <?php echo $data['created'] ; ?> </td>
             </tr>
-        </table>
+        <?php endwhile ?>
+    </table>
     <div class="footer">
-        <span>Y&I Group.inc</span>
+        <span class="bottom">Y&I Group.inc</span>
     </div>
     </body>
 </html>
