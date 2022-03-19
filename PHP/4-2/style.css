@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    margin:0 auto;
+    justify-content: center;
 }
 .box1 {
     width: 200px;
