@@ -4,27 +4,28 @@ require_once('db_connect.php');
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {
-    if (!empty($_POST["name"]) && !empty($_POST["password"]) {
+    if (!empty($_POST["name"]) && !empty($_POST["password"]) ) {
         // 入力したユーザIDとパスワードを格納
         $name = $_POST["name"];
         $password = $_POST["password"];
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 // :passwordにバインドする場合は、$password_hashを使用する
-        $stmt->bindValue(':password', $password_hash);
-
-        $sql = "INSERT INTO users (name, password) VALUES ($name, $stmt)";
+        $sql = "INSERT INTO users (name, password) VALUES (:name, :password)";
 
         // 関数db_connect()からPDOを取得する
         $pdo = db_connect();
         try {
             $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':name', $name);
+            $stmt->bindValue(':password', $password_hash);
             $stmt->execute();
             echo '登録が完了しました。';
         } catch (PDOException $e) {
             echo 'データベースエラー' . $e->getMessage();
             die();
         }
+
     }
 }
 ?>
