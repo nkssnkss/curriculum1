@@ -35,11 +35,6 @@ if (!empty($_POST)) {
 
         // 結果が1行取得できたら
         if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-            echo $row['password'] ; echo "<br>";
-            echo password_hash($pass, PASSWORD_DEFAULT);
-            echo $pass;
-
             // ハッシュ化されたパスワードを判定する定形関数のpassword_verify
             // 入力された値と引っ張ってきた値が同じか判定しています。
             if (password_verify($pass, $row['password'])) {

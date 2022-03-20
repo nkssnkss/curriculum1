@@ -4,7 +4,7 @@ require_once('db_connect.php');
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {
-    if (!empty($_POST["name"]) && !empty($_POST["password"]) ) {
+    if (!empty($_POST["name"]) && !empty($_POST["password"])) {
         // 入力したユーザIDとパスワードを格納
         $name = $_POST["name"];
         $password = $_POST["password"];
