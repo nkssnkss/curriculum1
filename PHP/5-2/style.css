@@ -1,10 +1,81 @@
-.button{
+.container {
+    display: flex;
+}
+
+.space{
+    width: 30px;
+    height: 50px;
+}
+
+.button1{
     width: 150px;
     height: 50px;
     text-align: center;
-    padding: 10px 30px;
+    padding: 10px 50px;
     background-color: blue;
     display: block;
     text-decoration: none;
     color: white;
+}
+
+.button2{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: green;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+}
+
+.button3{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: blue;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+}
+
+.button4{
+    width: 10px;
+    height: 25px;
+    text-align: center;
+    padding: 10px 30px;
+    background-color: red;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+table{
+    border: 1px solid #333333;
+    font-size: 90%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid gray;
+    background-color: gray;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+}
+
+td{
+    border: 1px solid gray;
+    background-color: white;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+}
+
+h1{
+    font-size: 180%;
 }

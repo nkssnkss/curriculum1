@@ -57,12 +57,14 @@ if (isset($_POST["post"])) {
     <h1>本登録画面</h1>
     <form method="POST" action="">
         <br>
-        <input type="text" placeholder="タイトル" name="title" id="title" style="width:200px;height:50px;">
+        <input type="text" placeholder="タイトル" name="title" id="title" style="width:200px;height:30px;">
         <br>
         <br>
-        <input type="text" placeholder="発売日" name="date" id="date" style="width:200px;height:100px;"><br>
+        <input type="date" placeholder="発売日" name="date" id="date" style="width:200px;height:30px;"><br>
+        <br>
         在庫数
-        <select name="stock">
+        <br>
+        <select placeholder="選択してください" name="stock" style="width:200px;height:30px;">
             <?php for ($i=1;$i<=20;$i++){ ?>
             <option value="<?php echo $i; ?>">
             <?php echo $i; ?>
@@ -70,7 +72,10 @@ if (isset($_POST["post"])) {
             <?php } ?>
         </select>
         <br>
-        <input type="submit" value="登録" id="post" name="post" class="button">
+        <br>
+        <input type="submit" value="登録" id="post" name="post" class="button1">
     </form>
+    <br>
+    <a class="button2" href="main.php">在庫一覧</a>
 </body>
 </html>

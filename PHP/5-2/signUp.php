@@ -46,8 +46,9 @@ if (isset($_POST["signUp"])) {
 <br>
 <input type="password" placeholder="パスワード" name="password" id="password" style="width:300px;height:25px;"><br>
 <br>
+<a class="button2" href="login.php">登録済の方</a>
 <br>
-<input type="submit" value="新規登録" id="signUp" name="signUp" class="button">
+<input type="submit" value="新規登録" id="signUp" name="signUp" class="button1">
 
 </form>
 </body>

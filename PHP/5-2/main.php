@@ -30,15 +30,19 @@ check_user_logged_in();
 </head>
 <body>
     <h1>在庫一覧画面</h1>
-    <p>ようこそ<?php echo $_SESSION["user_name"]; ?>さん</p>
-    <a href="create_book.php">新規登録</a><br />
-    <a href="logout.php">ログアウト</a>
+    <div class="container">
+        <a class="button3" href="create_book.php">本の新規登録</a>
+        <div class="space"></div>
+        <a class="button2" href="logout.php">ログアウト</a>
+    </div>
+    <br>
+
     <table>
     <tr>
-        <td>タイトル</td>
-        <td>発売日</td>
-        <td>在庫数</td>
-        <td></td>
+        <th>タイトル</th>
+        <th>発売日</th>
+        <th>在庫数</th>
+        <th></th>
 
     </tr>
 
@@ -47,7 +51,7 @@ check_user_logged_in();
             <td><?php echo $row['title']; ?></td>
             <td><?php echo $row['date']; ?></td>
             <td><?php echo $row['stock']; ?></td>
-            <td><a href="delete_book.php?id=<?php echo $row['id']; ?>">削除</a></td>
+            <td><a class="buttom4" href="delete_book.php?id=<?php echo $row['id']; ?>">削除</a></td>
         </tr>
     <?php } ?>
 </table>
