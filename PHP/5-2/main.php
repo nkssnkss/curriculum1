@@ -31,7 +31,7 @@ check_user_logged_in();
 <body>
     <h1>在庫一覧画面</h1>
     <div class="container">
-        <a class="button3" href="create_book.php">本の新規登録</a>
+        <a class="button4" href="create_book.php">本の新規登録</a>
         <div class="space"></div>
         <a class="button2" href="logout.php">ログアウト</a>
     </div>
@@ -51,7 +51,7 @@ check_user_logged_in();
             <td><?php echo $row['title']; ?></td>
             <td><?php echo $row['date']; ?></td>
             <td><?php echo $row['stock']; ?></td>
-            <td><a class="buttom4" href="delete_book.php?id=<?php echo $row['id']; ?>">削除</a></td>
+            <td><a class="button3" href="delete_book.php?id=<?php echo $row['id']; ?>">削除</a></td>
         </tr>
     <?php } ?>
 </table>
