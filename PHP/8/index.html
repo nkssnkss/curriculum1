@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id="country" onchange="changeLang()">
+        <option id="select">選択してください</option>
+        <option id="selected_jpn">日本語</option>
+        <option id="selected_en">English</option>
+        <option id="selected_all">全て表示</option>
+    </select>
+    <table>
+        <tr id="Japan">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="English">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+
+    <script>
+        //①onchangeで使用されている関数の中身を実装してください。
+        function changeLang() {
+            // ①id「select」の要素を取得
+            var select = document.querySelector("#country");
+            var options = document.querySelectorAll("#country option");
+            // ボタンがクリックされたら、という処理の始まり
+            select.addEventListener('change', function() {
+                var index =  this.selectedIndex;
+
+            // ②取得したselectが「selected_jpn」だったら。     
+                if(index == 1){
+		    // 日本語のみ表示
+                document.getElementById("select").innerHTML = Japan;
+            // ②取得したselectが「selected_en」だったら。
+	            }else if(index == 2){
+	        // Englishのみ表示
+                document.getElementById("select").innerHTML = English; 
+	            }else if(index == 3){
+                document.getElementById("select").innerHTML = Japan + English;
+                }
+            }, false);
+        }
+    </script>
+</body>
+</html>
